@@ -1,3 +1,4 @@
+import { useId } from "react";
 import { useFriday, AGENT_PIPELINE } from "../store";
 import type { AgentState } from "../types";
 import { AgentVisual } from "./AgentVisuals";
@@ -89,7 +90,7 @@ function Field({ k, v }: { k: string; v: string }) {
 }
 
 function EdgeFlow({ active, fromColor, toColor }: { active: boolean; fromColor: string; toColor: string }) {
-  const id = `g-${Math.random().toString(36).slice(2, 8)}`;
+  const id = `g-${useId().replace(/:/g, "")}`;
   return (
     <div className="relative flex w-16 items-center self-center" aria-hidden>
       <svg viewBox="0 0 64 24" className="h-6 w-full">

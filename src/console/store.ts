@@ -9,6 +9,7 @@ import type {
 } from "./types";
 
 const EVENT_BUFFER = 500;
+const INITIAL_TIMESTAMP = "2026-06-04T00:00:00.000Z";
 
 export const AGENT_PIPELINE = [
   "radar",
@@ -23,34 +24,34 @@ export const AGENT_PIPELINE = [
 ] as const;
 
 const INITIAL_AGENTS: AgentState[] = [
-  { id: "radar", name: "Radar", role: "Activation Scanner", theme: "Wake / hotkey / clap detection", color: "--agent-radar", status: "listening", health: "healthy", updated_at: new Date().toISOString() },
-  { id: "whisper", name: "Whisper", role: "Speech Processing", theme: "Audio capture & STT", color: "--agent-whisper", status: "idle", health: "healthy", updated_at: new Date().toISOString() },
-  { id: "switchboard", name: "Switchboard", role: "Routing Matrix", theme: "Model & route selection", color: "--agent-switchboard", status: "idle", health: "healthy", updated_at: new Date().toISOString() },
-  { id: "planner", name: "Planner", role: "Mission Planner", theme: "Multi-step decomposition", color: "--agent-planner", status: "idle", health: "healthy", updated_at: new Date().toISOString() },
-  { id: "cortex", name: "Cortex", role: "Reasoning Core", theme: "Intent & action generation", color: "--agent-cortex", status: "idle", health: "healthy", updated_at: new Date().toISOString() },
-  { id: "shield", name: "Shield", role: "Safety Barrier", theme: "Validation & risk", color: "--agent-shield", status: "idle", health: "healthy", updated_at: new Date().toISOString() },
-  { id: "gatekeeper", name: "Gatekeeper", role: "Approval Vault", theme: "Human-in-the-loop", color: "--agent-gatekeeper", status: "idle", health: "healthy", updated_at: new Date().toISOString() },
-  { id: "forge", name: "Forge", role: "Execution Engine", theme: "Tool & command runner", color: "--agent-forge", status: "idle", health: "healthy", updated_at: new Date().toISOString() },
-  { id: "oracle", name: "Oracle", role: "Voice Emitter", theme: "Spoken response", color: "--agent-oracle", status: "idle", health: "healthy", updated_at: new Date().toISOString() },
+  { id: "radar", name: "Radar", role: "Activation Scanner", theme: "Wake / hotkey / clap detection", color: "--agent-radar", status: "listening", health: "healthy", updated_at: INITIAL_TIMESTAMP },
+  { id: "whisper", name: "Whisper", role: "Speech Processing", theme: "Audio capture & STT", color: "--agent-whisper", status: "idle", health: "healthy", updated_at: INITIAL_TIMESTAMP },
+  { id: "switchboard", name: "Switchboard", role: "Routing Matrix", theme: "Model & route selection", color: "--agent-switchboard", status: "idle", health: "healthy", updated_at: INITIAL_TIMESTAMP },
+  { id: "planner", name: "Planner", role: "Mission Planner", theme: "Multi-step decomposition", color: "--agent-planner", status: "idle", health: "healthy", updated_at: INITIAL_TIMESTAMP },
+  { id: "cortex", name: "Cortex", role: "Reasoning Core", theme: "Intent & action generation", color: "--agent-cortex", status: "idle", health: "healthy", updated_at: INITIAL_TIMESTAMP },
+  { id: "shield", name: "Shield", role: "Safety Barrier", theme: "Validation & risk", color: "--agent-shield", status: "idle", health: "healthy", updated_at: INITIAL_TIMESTAMP },
+  { id: "gatekeeper", name: "Gatekeeper", role: "Approval Vault", theme: "Human-in-the-loop", color: "--agent-gatekeeper", status: "idle", health: "healthy", updated_at: INITIAL_TIMESTAMP },
+  { id: "forge", name: "Forge", role: "Execution Engine", theme: "Tool & command runner", color: "--agent-forge", status: "idle", health: "healthy", updated_at: INITIAL_TIMESTAMP },
+  { id: "oracle", name: "Oracle", role: "Voice Emitter", theme: "Spoken response", color: "--agent-oracle", status: "idle", health: "healthy", updated_at: INITIAL_TIMESTAMP },
 ];
 
 const INITIAL_SERVICES: ServiceState[] = [
-  { id: "tuner", name: "Tuner", role: "Audio Calibration Deck", theme: "Microphone & devices", health: "healthy", summary: "MacBook Pro Mic · −18 dB · granted", recent: "device.switched → builtin", errors: 0, updated_at: new Date().toISOString() },
-  { id: "memory", name: "Memory", role: "Context Vault", theme: "Namespaced records", health: "healthy", summary: "412 keys across 11 namespaces", recent: "agent.whisper.last_transcript updated", errors: 0, updated_at: new Date().toISOString() },
-  { id: "watchtower", name: "Watchtower", role: "Surveillance Tower", theme: "Runtime telemetry", health: "healthy", summary: "All models reachable · 0 alerts", recent: "qwen3-4b heartbeat", errors: 0, updated_at: new Date().toISOString() },
-  { id: "ledger", name: "Ledger", role: "Audit Archive", theme: "Permanent structured logs", health: "healthy", summary: "1,284 events · 23 runs today", recent: "evt_001 → route_selected", errors: 0, updated_at: new Date().toISOString() },
-  { id: "skillbook", name: "Skillbook", role: "Capability Codex", theme: "Tools & permissions", health: "healthy", summary: "42 skills · 9 categories", recent: "skill.open_app registered", errors: 0, updated_at: new Date().toISOString() },
-  { id: "chronos", name: "Chronos", role: "Temporal Scheduler", theme: "Timers & recurring jobs", health: "healthy", summary: "3 scheduled · 1 recurring", errors: 0, recent: "reminder.standup in 12m", updated_at: new Date().toISOString() },
-  { id: "archivist", name: "Archivist", role: "Evolution Archive", theme: "Versions & upgrade history", health: "healthy", summary: "v0.9.0 · 4 changes since last release", recent: "Planner added in v0.9.0", errors: 0, updated_at: new Date().toISOString() },
+  { id: "tuner", name: "Tuner", role: "Audio Calibration Deck", theme: "Microphone & devices", health: "healthy", summary: "MacBook Pro Mic · −18 dB · granted", recent: "device.switched → builtin", errors: 0, updated_at: INITIAL_TIMESTAMP },
+  { id: "memory", name: "Memory", role: "Context Vault", theme: "Namespaced records", health: "healthy", summary: "412 keys across 11 namespaces", recent: "agent.whisper.last_transcript updated", errors: 0, updated_at: INITIAL_TIMESTAMP },
+  { id: "watchtower", name: "Watchtower", role: "Surveillance Tower", theme: "Runtime telemetry", health: "healthy", summary: "All models reachable · 0 alerts", recent: "qwen3-4b heartbeat", errors: 0, updated_at: INITIAL_TIMESTAMP },
+  { id: "ledger", name: "Ledger", role: "Audit Archive", theme: "Permanent structured logs", health: "healthy", summary: "1,284 events · 23 runs today", recent: "evt_001 → route_selected", errors: 0, updated_at: INITIAL_TIMESTAMP },
+  { id: "skillbook", name: "Skillbook", role: "Capability Codex", theme: "Tools & permissions", health: "healthy", summary: "42 skills · 9 categories", recent: "skill.open_app registered", errors: 0, updated_at: INITIAL_TIMESTAMP },
+  { id: "chronos", name: "Chronos", role: "Temporal Scheduler", theme: "Timers & recurring jobs", health: "healthy", summary: "3 scheduled · 1 recurring", errors: 0, recent: "reminder.standup in 12m", updated_at: INITIAL_TIMESTAMP },
+  { id: "archivist", name: "Archivist", role: "Evolution Archive", theme: "Versions & upgrade history", health: "healthy", summary: "v0.9.0 · 4 changes since last release", recent: "Planner added in v0.9.0", errors: 0, updated_at: INITIAL_TIMESTAMP },
 ];
 
 const INITIAL_MEMORY: MemoryRecord[] = [
-  { namespace: "agent.whisper", type: "memory", key: "last_transcript", value: "Open VS Code and show Qwen logs", updated_at: new Date().toISOString() },
-  { namespace: "agent.cortex", type: "memory", key: "last_intent", value: { intent: "open_application", target: "vscode" }, updated_at: new Date().toISOString() },
-  { namespace: "service.tuner", type: "memory", key: "selected_mic", value: "MacBook Pro Microphone", updated_at: new Date().toISOString() },
-  { namespace: "config.voice", type: "memory", key: "voice", value: "Samantha", updated_at: new Date().toISOString() },
-  { namespace: "user.preferences", type: "memory", key: "active_project", value: "friday-console", updated_at: new Date().toISOString() },
-  { namespace: "agent.forge", type: "memory", key: "recent_files", value: ["~/dev/friday/main.rs", "~/dev/friday/agents/cortex.rs"], updated_at: new Date().toISOString() },
+  { namespace: "agent.whisper", type: "memory", key: "last_transcript", value: "Open VS Code and show Qwen logs", updated_at: INITIAL_TIMESTAMP },
+  { namespace: "agent.cortex", type: "memory", key: "last_intent", value: { intent: "open_application", target: "vscode" }, updated_at: INITIAL_TIMESTAMP },
+  { namespace: "service.tuner", type: "memory", key: "selected_mic", value: "MacBook Pro Microphone", updated_at: INITIAL_TIMESTAMP },
+  { namespace: "config.voice", type: "memory", key: "voice", value: "Samantha", updated_at: INITIAL_TIMESTAMP },
+  { namespace: "user.preferences", type: "memory", key: "active_project", value: "friday-console", updated_at: INITIAL_TIMESTAMP },
+  { namespace: "agent.forge", type: "memory", key: "recent_files", value: ["~/dev/friday/main.rs", "~/dev/friday/agents/cortex.rs"], updated_at: INITIAL_TIMESTAMP },
 ];
 
 const INITIAL_WATCH: WatchtowerSnapshot = {
