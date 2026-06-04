@@ -101,8 +101,8 @@ function NeuralOrb({ color, active }: { color: string; active: boolean }) {
       </defs>
       <circle cx="50" cy="50" r="28" fill="url(#no)" style={{ animation: active ? "orb-pulse 2.4s ease-in-out infinite" : undefined }} />
       {[0, 60, 120, 180, 240, 300].map((a) => {
-        const x = 50 + 36 * Math.cos((a * Math.PI) / 180);
-        const y = 50 + 36 * Math.sin((a * Math.PI) / 180);
+        const x = (50 + 36 * Math.cos((a * Math.PI) / 180)).toFixed(3);
+        const y = (50 + 36 * Math.sin((a * Math.PI) / 180)).toFixed(3);
         return <g key={a}>
           <line x1="50" y1="50" x2={x} y2={y} stroke={color} strokeOpacity="0.3" />
           <circle cx={x} cy={y} r="2" fill={color} />
