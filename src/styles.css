@@ -63,38 +63,72 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  /* FRIDAY Console — obsidian + holographic */
+  --background: oklch(0.16 0.018 260);
+  --foreground: oklch(0.95 0.01 240);
+  --card: oklch(0.21 0.02 260 / 0.55);
+  --card-foreground: oklch(0.95 0.01 240);
+  --popover: oklch(0.18 0.02 260);
+  --popover-foreground: oklch(0.95 0.01 240);
+  --primary: oklch(0.82 0.16 200);
+  --primary-foreground: oklch(0.14 0.02 260);
+  --secondary: oklch(0.28 0.04 270);
+  --secondary-foreground: oklch(0.95 0.01 240);
+  --muted: oklch(0.24 0.02 260);
+  --muted-foreground: oklch(0.68 0.02 250);
+  --accent: oklch(0.7 0.18 300);
+  --accent-foreground: oklch(0.14 0.02 260);
+  --destructive: oklch(0.65 0.24 25);
+  --destructive-foreground: oklch(0.98 0.003 240);
+  --border: oklch(0.95 0.02 240 / 0.08);
+  --input: oklch(0.95 0.02 240 / 0.1);
+  --ring: oklch(0.82 0.16 200 / 0.6);
+
+  /* Status palette */
+  --status-idle: oklch(0.65 0.02 250);
+  --status-listening: oklch(0.82 0.16 200);
+  --status-transcribing: oklch(0.72 0.18 240);
+  --status-routing: oklch(0.7 0.2 290);
+  --status-planning: oklch(0.65 0.2 270);
+  --status-reasoning: oklch(0.7 0.22 310);
+  --status-validating: oklch(0.82 0.16 80);
+  --status-approval: oklch(0.78 0.18 60);
+  --status-executing: oklch(0.78 0.18 155);
+  --status-speaking: oklch(0.82 0.2 145);
+  --status-success: oklch(0.78 0.18 155);
+  --status-warning: oklch(0.85 0.18 90);
+  --status-error: oklch(0.68 0.24 25);
+  --status-offline: oklch(0.45 0.01 250);
+
+  /* Agent signature colors */
+  --agent-radar: oklch(0.82 0.16 200);
+  --agent-whisper: oklch(0.75 0.18 230);
+  --agent-switchboard: oklch(0.7 0.2 295);
+  --agent-planner: oklch(0.68 0.2 265);
+  --agent-cortex: oklch(0.72 0.22 310);
+  --agent-shield: oklch(0.82 0.18 70);
+  --agent-gatekeeper: oklch(0.78 0.2 55);
+  --agent-forge: oklch(0.78 0.2 150);
+  --agent-oracle: oklch(0.82 0.2 145);
+
+  --grid-line: oklch(0.82 0.16 200 / 0.08);
+  --glass: oklch(0.22 0.02 260 / 0.5);
+  --glass-strong: oklch(0.2 0.025 260 / 0.78);
+
+  --sidebar: oklch(0.18 0.02 260 / 0.7);
+  --sidebar-foreground: oklch(0.95 0.01 240);
+  --sidebar-primary: oklch(0.82 0.16 200);
+  --sidebar-primary-foreground: oklch(0.14 0.02 260);
+  --sidebar-accent: oklch(0.26 0.03 270);
+  --sidebar-accent-foreground: oklch(0.95 0.01 240);
+  --sidebar-border: oklch(0.95 0.02 240 / 0.08);
+  --sidebar-ring: oklch(0.82 0.16 200 / 0.5);
+
+  --chart-1: var(--agent-radar);
+  --chart-2: var(--agent-cortex);
+  --chart-3: var(--agent-forge);
+  --chart-4: var(--agent-shield);
+  --chart-5: var(--agent-switchboard);
 }
 
 .dark {
@@ -140,5 +174,128 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: ui-sans-serif, "Inter", system-ui, -apple-system, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(1200px 600px at 15% -10%, oklch(0.3 0.12 230 / 0.18), transparent 60%),
+      radial-gradient(900px 500px at 95% 110%, oklch(0.3 0.16 305 / 0.16), transparent 60%),
+      linear-gradient(180deg, oklch(0.14 0.018 260), oklch(0.12 0.02 265));
+    background-attachment: fixed;
+  }
+}
+
+@theme inline {
+  --color-status-idle: var(--status-idle);
+  --color-status-listening: var(--status-listening);
+  --color-status-transcribing: var(--status-transcribing);
+  --color-status-routing: var(--status-routing);
+  --color-status-planning: var(--status-planning);
+  --color-status-reasoning: var(--status-reasoning);
+  --color-status-validating: var(--status-validating);
+  --color-status-approval: var(--status-approval);
+  --color-status-executing: var(--status-executing);
+  --color-status-speaking: var(--status-speaking);
+  --color-status-success: var(--status-success);
+  --color-status-warning: var(--status-warning);
+  --color-status-error: var(--status-error);
+  --color-status-offline: var(--status-offline);
+  --color-agent-radar: var(--agent-radar);
+  --color-agent-whisper: var(--agent-whisper);
+  --color-agent-switchboard: var(--agent-switchboard);
+  --color-agent-planner: var(--agent-planner);
+  --color-agent-cortex: var(--agent-cortex);
+  --color-agent-shield: var(--agent-shield);
+  --color-agent-gatekeeper: var(--agent-gatekeeper);
+  --color-agent-forge: var(--agent-forge);
+  --color-agent-oracle: var(--agent-oracle);
+  --font-mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+}
+
+/* Cinematic utilities */
+@utility holo-panel {
+  background: linear-gradient(
+    180deg,
+    oklch(0.24 0.025 260 / 0.55),
+    oklch(0.18 0.02 265 / 0.45)
+  );
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid oklch(0.95 0.02 240 / 0.08);
+  box-shadow:
+    inset 0 1px 0 oklch(0.98 0.02 240 / 0.06),
+    0 20px 60px -20px oklch(0.05 0.02 260 / 0.6),
+    0 0 0 1px oklch(0.82 0.16 200 / 0.03);
+}
+
+@utility holo-panel-strong {
+  background: linear-gradient(
+    180deg,
+    oklch(0.22 0.025 260 / 0.85),
+    oklch(0.16 0.02 265 / 0.8)
+  );
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid oklch(0.95 0.02 240 / 0.1);
+}
+
+@utility grid-bg {
+  background-image:
+    linear-gradient(oklch(0.82 0.16 200 / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.82 0.16 200 / 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@utility text-glow {
+  text-shadow: 0 0 12px currentColor;
+}
+
+@utility ring-glow {
+  box-shadow:
+    0 0 0 1px currentColor,
+    0 0 24px -2px currentColor,
+    inset 0 0 16px -8px currentColor;
+}
+
+@layer base {
+  ::selection {
+    background: oklch(0.82 0.16 200 / 0.35);
+    color: oklch(0.98 0.02 240);
+  }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.82 0.16 200 / 0.18);
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: oklch(0.82 0.16 200 / 0.32); }
+}
+
+/* Cinematic keyframes */
+@keyframes radar-sweep {
+  to { transform: rotate(360deg); }
+}
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+@keyframes flow-dash {
+  to { stroke-dashoffset: -200; }
+}
+@keyframes waveform {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+@keyframes orb-pulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.06); }
+}
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(400%); }
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
   }
 }

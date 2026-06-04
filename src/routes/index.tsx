@@ -1,17 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ConsoleApp } from "@/console/ConsoleApp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "FRIDAY Console — Local AI Runtime Observability" },
+      { name: "description", content: "Cinematic observability and safe-control console for the FRIDAY local-first multi-agent AI runtime." },
+      { property: "og:title", content: "FRIDAY Console" },
+      { property: "og:description", content: "Local-first multi-agent AI runtime observability console." },
     ],
   }),
   component: Index,
 });
 
 function Index() {
-  return <div className="min-h-screen bg-background" />;
+  return <ConsoleApp />;
 }
