@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 import { useFriday } from "../store";
 import { StatusDot } from "./StatusDot";
 
+const INITIAL_CLOCK = "--:--:--";
+
 export function TopBar() {
   const { connected, watch, activeRunId, activeModel } = useFriday();
-  const [clock, setClock] = useState(new Date());
+  const [clock, setClock] = useState(INITIAL_CLOCK);
   useEffect(() => {
-    const i = setInterval(() => setClock(new Date()), 1000);
+    const updateClock = () => setClock(new Date().toLocaleTimeString([], { hour12: false }));
+    updateClock();
+    const i = setInterval(updateClock, 1000);
     return () => clearInterval(i);
   }, []);
 
@@ -42,7 +46,7 @@ export function TopBar() {
         <Item label="Run" value={activeRunId ?? "—"} />
         <Item label="CPU" value={`${watch.cpu}%`} />
         <Item label="MEM" value={`${watch.memory}%`} />
-        <Item label="Local" value={clock.toLocaleTimeString([], { hour12: false })} />
+        <Item label="Local" value={clock} />
         <span className={`h-2 w-2 rounded-full ${connected ? "bg-status-success" : "bg-status-error"}`} style={{ boxShadow: "0 0 10px currentColor" }} />
       </div>
     </header>
