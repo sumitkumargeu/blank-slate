@@ -9,6 +9,7 @@ import type {
 } from "./types";
 
 const EVENT_BUFFER = 500;
+const INITIAL_TIMESTAMP = "2026-06-04T00:00:00.000Z";
 
 export const AGENT_PIPELINE = [
   "radar",
@@ -23,15 +24,15 @@ export const AGENT_PIPELINE = [
 ] as const;
 
 const INITIAL_AGENTS: AgentState[] = [
-  { id: "radar", name: "Radar", role: "Activation Scanner", theme: "Wake / hotkey / clap detection", color: "--agent-radar", status: "listening", health: "healthy", updated_at: new Date().toISOString() },
-  { id: "whisper", name: "Whisper", role: "Speech Processing", theme: "Audio capture & STT", color: "--agent-whisper", status: "idle", health: "healthy", updated_at: new Date().toISOString() },
-  { id: "switchboard", name: "Switchboard", role: "Routing Matrix", theme: "Model & route selection", color: "--agent-switchboard", status: "idle", health: "healthy", updated_at: new Date().toISOString() },
-  { id: "planner", name: "Planner", role: "Mission Planner", theme: "Multi-step decomposition", color: "--agent-planner", status: "idle", health: "healthy", updated_at: new Date().toISOString() },
-  { id: "cortex", name: "Cortex", role: "Reasoning Core", theme: "Intent & action generation", color: "--agent-cortex", status: "idle", health: "healthy", updated_at: new Date().toISOString() },
-  { id: "shield", name: "Shield", role: "Safety Barrier", theme: "Validation & risk", color: "--agent-shield", status: "idle", health: "healthy", updated_at: new Date().toISOString() },
-  { id: "gatekeeper", name: "Gatekeeper", role: "Approval Vault", theme: "Human-in-the-loop", color: "--agent-gatekeeper", status: "idle", health: "healthy", updated_at: new Date().toISOString() },
-  { id: "forge", name: "Forge", role: "Execution Engine", theme: "Tool & command runner", color: "--agent-forge", status: "idle", health: "healthy", updated_at: new Date().toISOString() },
-  { id: "oracle", name: "Oracle", role: "Voice Emitter", theme: "Spoken response", color: "--agent-oracle", status: "idle", health: "healthy", updated_at: new Date().toISOString() },
+  { id: "radar", name: "Radar", role: "Activation Scanner", theme: "Wake / hotkey / clap detection", color: "--agent-radar", status: "listening", health: "healthy", updated_at: INITIAL_TIMESTAMP },
+  { id: "whisper", name: "Whisper", role: "Speech Processing", theme: "Audio capture & STT", color: "--agent-whisper", status: "idle", health: "healthy", updated_at: INITIAL_TIMESTAMP },
+  { id: "switchboard", name: "Switchboard", role: "Routing Matrix", theme: "Model & route selection", color: "--agent-switchboard", status: "idle", health: "healthy", updated_at: INITIAL_TIMESTAMP },
+  { id: "planner", name: "Planner", role: "Mission Planner", theme: "Multi-step decomposition", color: "--agent-planner", status: "idle", health: "healthy", updated_at: INITIAL_TIMESTAMP },
+  { id: "cortex", name: "Cortex", role: "Reasoning Core", theme: "Intent & action generation", color: "--agent-cortex", status: "idle", health: "healthy", updated_at: INITIAL_TIMESTAMP },
+  { id: "shield", name: "Shield", role: "Safety Barrier", theme: "Validation & risk", color: "--agent-shield", status: "idle", health: "healthy", updated_at: INITIAL_TIMESTAMP },
+  { id: "gatekeeper", name: "Gatekeeper", role: "Approval Vault", theme: "Human-in-the-loop", color: "--agent-gatekeeper", status: "idle", health: "healthy", updated_at: INITIAL_TIMESTAMP },
+  { id: "forge", name: "Forge", role: "Execution Engine", theme: "Tool & command runner", color: "--agent-forge", status: "idle", health: "healthy", updated_at: INITIAL_TIMESTAMP },
+  { id: "oracle", name: "Oracle", role: "Voice Emitter", theme: "Spoken response", color: "--agent-oracle", status: "idle", health: "healthy", updated_at: INITIAL_TIMESTAMP },
 ];
 
 const INITIAL_SERVICES: ServiceState[] = [
